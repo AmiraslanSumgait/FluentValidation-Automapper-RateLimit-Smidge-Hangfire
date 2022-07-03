@@ -269,3 +269,5 @@ C:\Users\Amiraslan\source\repos\UdemyCoreLibrary\UdemyCoreLibrary\obj\Debug\net6
 C:\Users\Amiraslan\source\repos\UdemyCoreLibrary\UdemyCoreLibrary\obj\Debug\net6.0\FluentValidationApp.Web.pdb
 C:\Users\Amiraslan\source\repos\UdemyCoreLibrary\UdemyCoreLibrary\obj\Debug\net6.0\FluentValidationApp.Web.genruntimeconfig.cache
 C:\Users\Amiraslan\source\repos\UdemyCoreLibrary\UdemyCoreLibrary\obj\Debug\net6.0\ref\FluentValidationApp.Web.dll
+C:\Users\Amiraslan\source\repos\UdemyCoreLibrary\UdemyCoreLibrary\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Amiraslan\source\repos\UdemyCoreLibrary\UdemyCoreLibrary\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

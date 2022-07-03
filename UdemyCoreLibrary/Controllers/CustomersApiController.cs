@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using FluentValidation;
+using FluentValidationApp.Web.DTOs;
+using FluentValidationApp.Web.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -16,23 +19,33 @@ namespace UdemyCoreLibrary.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IValidator<Customer> _customerValidator;
+        private readonly IMapper _mapper;
 
-
-        public CustomersApiController(AppDbContext context,IValidator<Customer> customerValidator)
+        public CustomersApiController(AppDbContext context,IValidator<Customer> customerValidator,IMapper mapper)
         {
             _customerValidator = customerValidator;
             _context = context;
+            _mapper = mapper;
+        }
+        [Route("MappingExample")]
+        [HttpGet]
+        public IActionResult MappingExample()
+        {
+            Customer customer = new Customer { Id = 1, Email = "amiraslankamal@gmail.com", Age = 27, Name = "Kamal",CreditCard=new CreditCard {Number="1234",ValidDate=DateTime.Now } };
+
+            return Ok(_mapper.Map<CustomerDto>(customer));
         }
 
         // GET: api/CustomersApi
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
+        public async Task<ActionResult<IEnumerable<CustomerDto>>> GetCustomers()
         {
           if (_context.Customers == null)
           {
               return NotFound();
           }
-            return await _context.Customers.ToListAsync();
+          List<Customer> customers= await _context.Customers.ToListAsync();
+            return _mapper.Map<List<CustomerDto>>(customers);
         }
 
         // GET: api/CustomersApi/5

@@ -1,4 +1,6 @@
-﻿namespace UdemyCoreLibrary.Models
+﻿using FluentValidationApp.Web.Models;
+
+namespace UdemyCoreLibrary.Models
 {
     public class Customer
     {
@@ -9,5 +11,10 @@
         public DateTime? Birthday { get; set; }
         public IList<Address> Addresses { get; set; }
         public Gender Gender { get; set; }
+        public CreditCard CreditCard { get; set; }
+        public string FullName()
+        {
+            return $"{Name}-{Email}-{Age}";
+        }
     }
 }
