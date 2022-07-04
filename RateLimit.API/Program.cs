@@ -14,9 +14,17 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddOptions();
 builder.Services.AddMemoryCache();
-builder.Services.Configure<IpRateLimitOptions>(builder.Configuration.GetSection("IpRateLimiting"));
-builder.Services.Configure<IpRateLimitPolicy>(builder.Configuration.GetSection("IpRateLimitPolicies"));
-builder.Services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
+
+
+//builder.Services.Configure<IpRateLimitOptions>(builder.Configuration.GetSection("IpRateLimiting"));
+builder.Services.Configure<ClientRateLimitOptions>(builder.Configuration.GetSection("ClientRateLimiting"));
+
+//builder.Services.Configure<IpRateLimitPolicy>(builder.Configuration.GetSection("IpRateLimitPolicies"));
+builder.Services.Configure <ClientRateLimitPolicies>(builder.Configuration.GetSection("ClientRateLimitPolicies"));
+
+//builder.Services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
+builder.Services.AddSingleton<IClientPolicyStore, MemoryCacheClientPolicyStore>();
+
 builder.Services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
@@ -25,7 +33,7 @@ builder.Services.AddSingleton<IProcessingStrategy, AsyncKeyLockProcessingStrateg
 
 
 var webHost = builder.Build();
-var IpPolicy = webHost.Services.GetRequiredService<IIpPolicyStore>();
+var IpPolicy = webHost.Services.GetRequiredService<IClientPolicyStore>();
 IpPolicy.SeedAsync().Wait();
 
 // Configure the HTTP request pipeline.
@@ -34,7 +42,8 @@ if (webHost.Environment.IsDevelopment())
     webHost.UseSwagger();
     webHost.UseSwaggerUI();
 }
-webHost.UseIpRateLimiting();
+//webHost.UseIpRateLimiting();
+webHost.UseClientRateLimiting();
 
 webHost.UseHttpsRedirection();
 
