@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentValidationApp.Web", "UdemyCoreLibrary\FluentValidationApp.Web.csproj", "{DEE857F6-9A03-41D9-8858-D38D660E5A25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateLimit.API", "RateLimit.API\RateLimit.API.csproj", "{8A3CF155-C6BC-468F-A56B-0A809D926508}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DEE857F6-9A03-41D9-8858-D38D660E5A25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEE857F6-9A03-41D9-8858-D38D660E5A25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEE857F6-9A03-41D9-8858-D38D660E5A25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A3CF155-C6BC-468F-A56B-0A809D926508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A3CF155-C6BC-468F-A56B-0A809D926508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A3CF155-C6BC-468F-A56B-0A809D926508}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A3CF155-C6BC-468F-A56B-0A809D926508}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
