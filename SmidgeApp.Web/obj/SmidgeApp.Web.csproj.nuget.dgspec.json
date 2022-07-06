@@ -44,6 +44,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.28.0, )"
+            },
             "Smidge": {
               "target": "Package",
               "version": "[4.1.0, )"

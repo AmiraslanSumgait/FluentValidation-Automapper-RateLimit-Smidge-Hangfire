@@ -28,3 +28,6 @@ C:\Users\Amiraslan\source\repos\UdemyCoreLibrary\SmidgeApp.Web\obj\Debug\net6.0\
 C:\Users\Amiraslan\source\repos\UdemyCoreLibrary\SmidgeApp.Web\bin\Debug\net6.0\Smidge.dll
 C:\Users\Amiraslan\source\repos\UdemyCoreLibrary\SmidgeApp.Web\bin\Debug\net6.0\Smidge.Core.dll
 C:\Users\Amiraslan\source\repos\UdemyCoreLibrary\SmidgeApp.Web\obj\Debug\net6.0\SmidgeApp.Web.csproj.CopyComplete
+C:\Users\Amiraslan\source\repos\UdemyCoreLibrary\SmidgeApp.Web\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Amiraslan\source\repos\UdemyCoreLibrary\SmidgeApp.Web\bin\Debug\net6.0\SendGrid.dll
+C:\Users\Amiraslan\source\repos\UdemyCoreLibrary\SmidgeApp.Web\bin\Debug\net6.0\StarkbankEcdsa.dll
